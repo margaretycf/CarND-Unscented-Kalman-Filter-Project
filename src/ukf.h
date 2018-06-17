@@ -5,7 +5,7 @@
 #include "Eigen/Dense"
 #include <vector>
 #include <string>
-#include <fstream>
+#include "tools.h"
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -67,7 +67,15 @@ public:
   ///* Sigma point spreading parameter
   double lambda_;
 
+  ///* the current NIS for radar
+  double NIS_radar_;
 
+  ///* the current NIS for laser
+  double NIS_laser_;
+
+  ///* Noise matrices
+  MatrixXd R_radar;
+  MatrixXd R_laser;
   /**
    * Constructor
    */
